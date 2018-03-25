@@ -75,6 +75,8 @@ class EmojiMatchingGame: CustomStringConvertible {
         if cardStates[index] == .hidden {
             cardsOnBoard[index] = cards[index].description
             cardStates[index] = .shown
+        } else {
+            return
         }
         if gameState == .noClick {
             gameState = .oneClick
