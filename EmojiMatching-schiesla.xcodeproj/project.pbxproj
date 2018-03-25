@@ -12,6 +12,13 @@
 		0A3304592067F739001124B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304572067F739001124B3 /* Main.storyboard */; };
 		0A33045B2067F739001124B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A33045A2067F739001124B3 /* Assets.xcassets */; };
 		0A33045E2067F739001124B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A33045C2067F739001124B3 /* LaunchScreen.storyboard */; };
+		0A33046C2067F788001124B3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304652067F787001124B3 /* Icon@2x.png */; };
+		0A33046D2067F788001124B3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304662067F788001124B3 /* Icon-72.png */; };
+		0A33046E2067F788001124B3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304672067F788001124B3 /* Icon.png */; };
+		0A33046F2067F788001124B3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304682067F788001124B3 /* Icon-72@2x.png */; };
+		0A3304702067F788001124B3 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3304692067F788001124B3 /* Icon-60.png */; };
+		0A3304712067F788001124B3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A33046A2067F788001124B3 /* Icon-Small-50.png */; };
+		0A3304722067F788001124B3 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A33046B2067F788001124B3 /* Icon-Small-50@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,14 @@
 		0A33045A2067F739001124B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A33045D2067F739001124B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A33045F2067F739001124B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A3304652067F787001124B3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		0A3304662067F788001124B3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		0A3304672067F788001124B3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		0A3304682067F788001124B3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		0A3304692067F788001124B3 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		0A33046A2067F788001124B3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		0A33046B2067F788001124B3 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		0A3304732067F79B001124B3 /* MatchingGame.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MatchingGame.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +69,20 @@
 		0A3304522067F739001124B3 /* EmojiMatching-schiesla */ = {
 			isa = PBXGroup;
 			children = (
+				0A3304692067F788001124B3 /* Icon-60.png */,
+				0A3304662067F788001124B3 /* Icon-72.png */,
+				0A3304682067F788001124B3 /* Icon-72@2x.png */,
+				0A33046A2067F788001124B3 /* Icon-Small-50.png */,
+				0A33046B2067F788001124B3 /* Icon-Small-50@2x.png */,
+				0A3304672067F788001124B3 /* Icon.png */,
+				0A3304652067F787001124B3 /* Icon@2x.png */,
 				0A3304532067F739001124B3 /* AppDelegate.swift */,
 				0A3304552067F739001124B3 /* ViewController.swift */,
 				0A3304572067F739001124B3 /* Main.storyboard */,
 				0A33045A2067F739001124B3 /* Assets.xcassets */,
 				0A33045C2067F739001124B3 /* LaunchScreen.storyboard */,
 				0A33045F2067F739001124B3 /* Info.plist */,
+				0A3304732067F79B001124B3 /* MatchingGame.playground */,
 			);
 			path = "EmojiMatching-schiesla";
 			sourceTree = "<group>";
@@ -123,7 +146,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A33046F2067F788001124B3 /* Icon-72@2x.png in Resources */,
+				0A33046E2067F788001124B3 /* Icon.png in Resources */,
+				0A3304722067F788001124B3 /* Icon-Small-50@2x.png in Resources */,
+				0A3304702067F788001124B3 /* Icon-60.png in Resources */,
+				0A3304712067F788001124B3 /* Icon-Small-50.png in Resources */,
 				0A33045E2067F739001124B3 /* LaunchScreen.storyboard in Resources */,
+				0A33046D2067F788001124B3 /* Icon-72.png in Resources */,
+				0A33046C2067F788001124B3 /* Icon@2x.png in Resources */,
 				0A33045B2067F739001124B3 /* Assets.xcassets in Resources */,
 				0A3304592067F739001124B3 /* Main.storyboard in Resources */,
 			);
