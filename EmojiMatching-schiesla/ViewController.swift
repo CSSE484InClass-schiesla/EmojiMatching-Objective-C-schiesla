@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBAction func pressedNewGame(_ sender: Any) {
         newGame()
     }
+    
     @IBAction func pressedGameTile(_ sender: Any) {
         if emojiGame.gameState == .win {
             return
@@ -23,12 +25,15 @@ class ViewController: UIViewController {
         emojiGame.cardPressed(gameBoardButton.tag)
         updateView()
     }
+    
     @IBOutlet var gameButtons: [UIButton]!
     var emojiGame = EmojiMatchingGame(numPairs: 10)
     var blockingUiIntentionally = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Sets icon fonts, picked a random font
         for button in gameButtons {
             if (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
                 button.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 64)
@@ -40,6 +45,7 @@ class ViewController: UIViewController {
     }
 
     func newGame() {
+        //block intentionally to stop a new game from starting during a delay
         if blockingUiIntentionally == true {
             return
         }
@@ -47,13 +53,17 @@ class ViewController: UIViewController {
         for i in 0..<gameButtons.count {
             gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
         }
-        print(emojiGame.description)
+        
+        //Cheet sheet
+        print(emojiGame)
     }
     
     func updateView() {
         for i in 0..<gameButtons.count {
             gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
         }
+        
+        //When the turns over, check for match and game over
         if emojiGame.gameState == .turnOver {
             blockingUiIntentionally = true
             delay(1.2) {
@@ -70,7 +80,5 @@ class ViewController: UIViewController {
         let when = DispatchTime.now() + delay
         DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
-
-
 }
 

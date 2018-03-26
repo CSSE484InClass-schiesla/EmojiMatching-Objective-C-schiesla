@@ -25,16 +25,18 @@ class EmojiMatchingGame: CustomStringConvertible {
     }
     
     var gameState: GameState
-    var cardStates: [CardState]
+    var cardStates: [CardState] //state of each card
+    var cards : [Character] //record of each cards original emoji
+    var cardBack : Character
+    var cardsOnBoard : [String] //represents the current state of the game boards (either card back or emoji)
     let allCardBacks = Array("🎆🎇🌈🌅🌇🌉🌃🌄⛺⛲🚢🌌🌋🗽")
     let allEmojiCharacters = Array("🚁🐴🐇🐢🐱🐌🐒🐞🐫🐠🐬🐩🐶🐰🐼⛄🌸⛅🐸🐳❄❤🐝🌺🌼🌽🍌🍎🍡🏡🌻🍉🍒🍦👠🐧👛🐛🐘🐨😃🐻🐹🐲🐊🐙")
-    var cards : [Character]
-    var cardBack : Character
-    var cardsOnBoard : [String]
+    
     
     init(numPairs: Int) {
         gameState = .noClick
         cardStates = [CardState](repeating: .hidden, count: numPairs*2)
+        
         // Randomly select emojiSymbols
         var emojiSymbolsUsed = [Character]()
         while emojiSymbolsUsed.count < numPairs {
@@ -48,7 +50,7 @@ class EmojiMatchingGame: CustomStringConvertible {
         cards.shuffle()
         
         // Randomly select a card back for this round
-        var index = Int(arc4random_uniform(UInt32(allCardBacks.count)))
+        let index = Int(arc4random_uniform(UInt32(allCardBacks.count)))
         cardBack = allCardBacks[index]
         cardsOnBoard = [String](repeating: cardBack.description, count: numPairs*2)
     }
@@ -72,12 +74,15 @@ class EmojiMatchingGame: CustomStringConvertible {
     }
     
     func cardPressed(_ index: Int) {
+        //if the card is hidden, reveal the emoji. If not, invalid move.
         if cardStates[index] == .hidden {
             cardsOnBoard[index] = cards[index].description
             cardStates[index] = .shown
         } else {
             return
         }
+        
+        //adjust game state
         if gameState == .noClick {
             gameState = .oneClick
         } else if gameState == .oneClick {
@@ -85,6 +90,7 @@ class EmojiMatchingGame: CustomStringConvertible {
         }
     }
     
+    //tracks what two cards are flipped, checks if they match and reacts appropriately
     func checkForMatch() {
         var picksClicked = [-1, -1]
             for i in 0..<cardStates.count {
@@ -98,6 +104,7 @@ class EmojiMatchingGame: CustomStringConvertible {
                     }
                 }
             }
+        
             if (cards[picksClicked[0]] == cards[picksClicked[1]]) {
                 cardsOnBoard[picksClicked[0]] = ""
                 cardStates[picksClicked[0]] = .removed
@@ -109,6 +116,7 @@ class EmojiMatchingGame: CustomStringConvertible {
                 cardsOnBoard[picksClicked[1]] = cardBack.description
                 cardStates[picksClicked[1]] = .hidden
             }
+        
         gameState = .noClick
     }
     
