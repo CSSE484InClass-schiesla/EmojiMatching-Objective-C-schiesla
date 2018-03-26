@@ -29,6 +29,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for button in gameButtons {
+            if (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
+                button.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 64)
+            } else {
+                button.titleLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: 100)
+            }
+        }
         newGame()
     }
 
@@ -39,25 +46,13 @@ class ViewController: UIViewController {
         emojiGame = EmojiMatchingGame(numPairs: 10)
         for i in 0..<gameButtons.count {
             gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
-            if (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
-                gameButtons[i].titleLabel?.font = UIFont(name: "System", size: 64)
-            } else {
-                gameButtons[i].titleLabel?.font = UIFont(name: "System", size: 100)
-            }
         }
-        
-        
         print(emojiGame.description)
     }
     
     func updateView() {
         for i in 0..<gameButtons.count {
             gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
-            if (traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) {
-                gameButtons[i].titleLabel?.font = UIFont(name: "System", size: 64)
-            } else {
-                gameButtons[i].titleLabel?.font = UIFont(name: "Times New Roman", size: 100)
-            }
         }
         if emojiGame.gameState == .turnOver {
             blockingUiIntentionally = true
