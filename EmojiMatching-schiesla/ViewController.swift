@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }
         
         //Cheet sheet
-        //print(emojiGame)
+        print(emojiGame.getGameBoardCheetSheet())
     }
     
     func updateView() {

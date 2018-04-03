@@ -51,7 +51,18 @@
 }
 
 - (NSString*) getGameBoardCheetSheet {
-    return @"";
+    NSMutableString* cheetSheet = [NSMutableString stringWithString:@""];
+    int index = 1;
+    for (int i = 0; i < self.numPairs*2; i++) {
+        if (index % 4 == 0) {
+            [cheetSheet appendString:self.cards[i]];
+            [cheetSheet appendString:@"\n"];
+        } else {
+            [cheetSheet appendString:self.cards[i]];
+        }
+        index++;
+    }
+    return cheetSheet;
     
 }
 
