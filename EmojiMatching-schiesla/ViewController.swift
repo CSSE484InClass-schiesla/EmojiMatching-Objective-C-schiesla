@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //hello1
+    
     @IBAction func pressedNewGame(_ sender: Any) {
         newGame()
     }
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet var gameButtons: [UIButton]!
-    var emojiGame = EmojiMatchingGame(numPairs: 10)
+    var emojiGame = EmojiMatchGameObjC()
     var blockingUiIntentionally = false
     
     override func viewDidLoad() {
@@ -49,18 +49,18 @@ class ViewController: UIViewController {
         if blockingUiIntentionally == true {
             return
         }
-        emojiGame = EmojiMatchingGame(numPairs: 10)
+        emojiGame = EmojiMatchGameObjC(numPairs: 10)
         for i in 0..<gameButtons.count {
-            gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
+            gameButtons[i].setTitle((emojiGame.cardsOnBoard[i] as! String), for: .normal)
         }
         
         //Cheet sheet
-        print(emojiGame)
+        //print(emojiGame)
     }
     
     func updateView() {
         for i in 0..<gameButtons.count {
-            gameButtons[i].setTitle(emojiGame.cardsOnBoard[i], for: .normal)
+            gameButtons[i].setTitle((emojiGame.cardsOnBoard[i] as! String), for: .normal)
         }
         
         //When the turns over, check for match and game over
