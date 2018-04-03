@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //hello
+    //hello1
     @IBAction func pressedNewGame(_ sender: Any) {
         newGame()
     }
